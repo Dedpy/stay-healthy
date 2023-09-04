@@ -10,6 +10,8 @@ function App() {
             <BrowserRouter>
                 <Navbar />
                 <Route path="/" element={<Landing_Page />} />
+                <Route path="/instant-consultation" element={<InstantConsultation />} />
+
 
 
             </BrowserRouter>
