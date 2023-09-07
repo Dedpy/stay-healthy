@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import GiveReviews from './GiveReviews';
-import Popup from 'reactjs-popup';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import GiveReviews from "./GiveReviews";
+import Popup from "reactjs-popup";
+import { useNavigate } from "react-router-dom";
 
 const ReviewForm = () => {
   const [reviewData, setReviewData] = useState({});
@@ -9,15 +9,13 @@ const ReviewForm = () => {
   const reportData = [
     {
       serialNumber: 1,
-      doctorName: 'Dr. John Doe',
-      doctorSpeciality: 'Cardiology',
-  
+      doctorName: "Dr. John Doe",
+      doctorSpeciality: "Cardiology",
     },
     {
       serialNumber: 2,
-      doctorName: 'Dr. Jane Smith',
-      doctorSpeciality: 'Dermatology',
-
+      doctorName: "Dr. Jane Smith",
+      doctorSpeciality: "Dermatology",
     },
     // Add more report data objects as needed
   ];
@@ -25,14 +23,14 @@ const ReviewForm = () => {
   const handleGiveReview = (serialNumber) => {
     setReviewData((prevReviewData) => ({
       ...prevReviewData,
-      [serialNumber]: ''
+      [serialNumber]: "",
     }));
   };
 
   const handleReviewSubmit = (serialNumber, review) => {
     setReviewData((prevReviewData) => ({
       ...prevReviewData,
-      [serialNumber]: review
+      [serialNumber]: review,
     }));
   };
   const navigate = useNavigate();
@@ -41,9 +39,9 @@ const ReviewForm = () => {
     //   if (!authtoken) {
     //       navigate("/login");
     //   }
-  }, [])
+  }, []);
   return (
-    <div style={{ marginTop: '10%' }} className="reviews-container">
+    <div style={{ marginTop: "10%" }} className="reviews-container">
       <h1>Reviews</h1>
       <table className="report-table">
         <thead>

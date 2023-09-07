@@ -1,133 +1,102 @@
-import React, {useEffect} from 'react'; 
+import React, { useEffect } from "react";
 
-// import './Report.css'; 
+import "./ReportsLayout.css";
 
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from "react-router-dom";
 
- 
+const ReportsLayout = () => {
+  const navigate = useNavigate();
 
-const ReportsLayout = () => { 
+  useEffect(() => {
+    const authtoken = sessionStorage.getItem("auth-token");
 
-    const navigate = useNavigate(); 
+    if (!authtoken) {
+      navigate("/login");
+    }
+  }, []);
 
-    useEffect(() => { 
+  // Sample report data
 
-        const authtoken = sessionStorage.getItem("auth-token"); 
+  const reportData = [
+    {
+      serialNumber: 1,
 
-        if (!authtoken) { 
+      doctorName: "Dr. John Doe",
 
-            navigate("/login"); 
+      doctorSpeciality: "Cardiology",
+    },
 
-        } 
+    {
+      serialNumber: 2,
 
-    }, []); 
+      doctorName: "Dr. Jane Smith",
 
-  // Sample report data 
+      doctorSpeciality: "Dermatology",
+    },
 
-    const reportData = [ 
+    // Add more report data objects as needed
+  ];
 
-        { 
+  return (
+    <div className="reports-container">
+      <h1>Reports</h1>
 
-        serialNumber: 1, 
+      <table className="report-table">
+        <thead>
+          <tr>
+            <th>S.No.</th>
 
-        doctorName: 'Dr. John Doe', 
+            <th>Doctor Name</th>
 
-        doctorSpeciality: 'Cardiology', 
+            <th>Doc tor Specialty</th>
 
-        }, 
+            {/* <th>Charges</th> */}
 
-        { 
+            <th>View Report</th>
 
-        serialNumber: 2, 
+            <th>Download Report</th>
+          </tr>
+        </thead>
 
-        doctorName: 'Dr. Jane Smith', 
+        <tbody>
+          {reportData.map((report, index) => (
+            <tr key={index}>
+              <td>{report.serialNumber}</td>
 
-        doctorSpeciality: 'Dermatology', 
+              <td>{report.doctorName}</td>
 
-   }, 
+              <td>{report.doctorSpeciality}</td>
 
-        // Add more report data objects as needed 
+              {/* <td>{report.charges}</td> */}
 
-    ]; 
+              <td>
+                <a
+                  target="_blank"
+                  href="Patient_Information.pdf"
+                  className="report-link"
+                  rel="noreferrer"
+                >
+                  View Report
+                </a>
+              </td>
 
- 
-
-    return ( 
-
-        <div className="reports-container"> 
-
-        <h1>Reports</h1> 
-
-        <table className="report-table"> 
-
-            <thead> 
-
-            <tr> 
-
-                <th>S.No.</th> 
-
-                <th>Doctor Name</th> 
-
-                <th>Doc tor Specialty</th> 
-
-               {/* <th>Charges</th> */} 
-
-                <th>View Report</th> 
-
-                <th>Download Report</th> 
-
-            </tr> 
-
-            </thead> 
-
-            <tbody> 
-
-            {reportData.map((report, index) => ( 
-
-                <tr key={index}> 
-
-                <td>{report.serialNumber}</td> 
-
-                <td>{report.doctorName}</td> 
-
-                <td>{report.doctorSpeciality}</td> 
-
-                {/* <td>{report.charges}</td> */} 
-
-                <td> 
-
-                    <a target='_blank' href='Patient_Information.pdf' className="report-link" rel="noreferrer"> 
-
-                        View Report 
-
-                    </a> 
-
-                </td> 
-
-                <td> 
-
-                    <a target='_blank' href='Patient_Information.pdf' download className="report-link" rel="noreferrer"> 
-
-                        Download Report 
-
-                    </a> 
-
-                </td> 
-
-                </tr> 
-
-            ))} 
-
-            </tbody> 
-
-        </table> 
-
-        </div> 
-
-    ); 
-
-}; 
-
- 
+              <td>
+                <a
+                  target="_blank"
+                  href="Patient_Information.pdf"
+                  download
+                  className="report-link"
+                  rel="noreferrer"
+                >
+                  Download Report
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default ReportsLayout;

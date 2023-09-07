@@ -9,7 +9,9 @@ import FindDoctorSearch from "./Components/FindDoctorSearch/FindDoctorSearch";
 import DoctorBook from "./Components/DoctorCard/DoctorBook";
 import InstantConsultation from "./Components/InstantConsultationBooking/InstantConsultation";
 import Notification from "./Components/Notification/Notification";
-
+import ReviewForm from "./Components/ReviewForm/ReviewForm";
+import ProfileForm from "./Components/ProfileForm/ProfileForm";
+import ReportsLayout from "./Components/Reports/ReportsLayout";
 export default function App() {
   return (
     <BrowserRouter>
