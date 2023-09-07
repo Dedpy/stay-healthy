@@ -8,19 +8,28 @@ import Navbar from "./Components/Navbar/Navbar";
 import FindDoctorSearch from "./Components/FindDoctorSearch/FindDoctorSearch";
 import DoctorBook from "./Components/DoctorCard/DoctorBook";
 import InstantConsultation from "./Components/InstantConsultationBooking/InstantConsultation";
+import Notification from "./Components/Notification/Notification";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/instant-consultation" element={<InstantConsultation />} />
-        <Route path="/finddoctor" element={<FindDoctorSearch />} />
-        <Route path="/search/doctors" element={<DoctorBook />} />
-      </Routes>
+      <Notification>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/finddoctor" element={<FindDoctorSearch />} />
+          <Route path="/search/doctors" element={<DoctorBook />} />
+          <Route path="/review" element={<ReviewForm />} />
+          <Route
+            path="/instant-consultation"
+            element={<InstantConsultation />}
+          />
+          <Route path="/profile" element={<ProfileForm />} />
+          <Route path="/reports" element={<ReportsLayout />} />
+        </Routes>
+      </Notification>
     </BrowserRouter>
   );
 }
