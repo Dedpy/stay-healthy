@@ -30,10 +30,11 @@ export default function Navbar() {
   };
   useEffect(() => {
     const storedemail = sessionStorage.getItem("email");
+    const storeName = sessionStorage.getItem("name");
 
     if (storedemail) {
       setIsLoggedIn(true);
-      setUsername(storedemail);
+      setUsername(storeName);
     }
   }, []);
   return (
@@ -63,6 +64,7 @@ export default function Navbar() {
         </li>
         {isLoggedIn ? (
           <>
+          <strong> Welcome, {username} </strong>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
