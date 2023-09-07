@@ -10,8 +10,8 @@ import DoctorBook from "./Components/DoctorCard/DoctorBook";
 import InstantConsultation from "./Components/InstantConsultationBooking/InstantConsultation";
 import Notification from "./Components/Notification/Notification";
 import ReviewForm from "./Components/ReviewForm/ReviewForm";
-import ProfileForm from "./Components/ProfileForm/ProfileForm";
-import ReportsLayout from "./Components/Reports/ReportsLayout";
+import ProfileForm from "./Components/ProfileCard/ProfileForm";
+import ReportsLayout from "./Components/ReportsLayout/ReportsLayout";
 export default function App() {
   return (
     <BrowserRouter>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Notification.css";
 
 const Notification = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
