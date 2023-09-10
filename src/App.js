@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/finddoctor" element={<FindDoctorSearch />} />
           <Route path="/search/doctors" element={<DoctorBook />} />
-          <Route path="/review" element={<ReviewForm />} />
+          <Route path="/reviews" element={<ReviewForm />} />
           <Route
             path="/instant-consultation"
             element={<InstantConsultation />}
