@@ -10,7 +10,7 @@ import DoctorBook from "./Components/DoctorCard/DoctorBook";
 import InstantConsultation from "./Components/InstantConsultationBooking/InstantConsultation";
 import Notification from "./Components/Notification/Notification";
 import ReviewForm from "./Components/ReviewForm/ReviewForm";
-import ProfileForm from "./Components/ProfileCard/ProfileForm";
+import ProfileForm from "./Components/ProfileCard/ProfileCard";
 import ReportsLayout from "./Components/ReportsLayout/ReportsLayout";
 export default function App() {
   return (
