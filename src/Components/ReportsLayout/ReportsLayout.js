@@ -72,7 +72,7 @@ const ReportsLayout = () => {
               <td>
                 <a
                   target="_blank"
-                  href="Patient_Information.pdf"
+                  href="patient_report.pdf"
                   className="report-link"
                   rel="noreferrer"
                 >
@@ -83,7 +83,7 @@ const ReportsLayout = () => {
               <td>
                 <a
                   target="_blank"
-                  href="Patient_Information.pdf"
+                  href="patient_report.pdf"
                   download
                   className="report-link"
                   rel="noreferrer"
